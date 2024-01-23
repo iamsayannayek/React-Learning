@@ -1,37 +1,36 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
 
 function App() {
-	const [counter, setCounter] = useState(15);
-
+	let [counter, setCounter] = useState(15);
 	const addValue = () => {
 		if (counter >= 20) {
-			alert("You Don't clicked beyond 20");
+			alert("You Can't Add value after 20");
 		} else {
 			setCounter(counter + 1);
 		}
 	};
 
 	const removeValue = () => {
-		if (counter <= 1) {
-			alert("You Don't clicked less than 1");
+		if (counter <= 0) {
+			alert("You Can't Remove value after 0");
 		} else {
 			setCounter(counter - 1);
 		}
 	};
+
 	return (
 		<>
-			<h1>Chai Aur React</h1>
-			<h2>Counter value: {counter}</h2>
+			<h2>Basic Project On useState Hook</h2>
+			<h1>Counter Value</h1>
+			<h1>{counter}</h1>
+			<br />
 
 			<button onClick={addValue}>Add Value</button>
 			<br />
 			<br />
 			<button onClick={removeValue}>Remove Value</button>
-			<br />
-			<footer>Counter: {counter}</footer>
 		</>
 	);
 }
