@@ -10,6 +10,13 @@ function App() {
 	const passwordRef = useRef(null);
 
 	//! It's Used for Optimize the Function Values
+	//! Whenever a component is created or updated that time react re-render the webpage
+	//! means the unnecessary function call happen, for that reason we use
+	//& useCallback() hook for stop the re-render of the function, whenever we want that time
+	//& only function called.
+	//^ It's return a memorized function means it's computation store into cache and whenever
+	//^ we want to call that time only it's use the value of the previous compilation value of that
+	//^ function
 	const passwordGenerator = useCallback(() => {
 		let pass = "";
 		let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
