@@ -12,9 +12,8 @@ function InputBox({
 	className = "",
 }) {
 	const amountInputId = useId();
-
 	return (
-		<div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
+		<div className={`bg-white p-3 rounded-lg text-sm flex `}>
 			<div className="w-1/2">
 				<label
 					htmlFor={amountInputId}
@@ -46,8 +45,7 @@ function InputBox({
 						<option key={currency} value={currency}>
 							{currency}
 						</option>
-					))}{" "}
-					//! Remember the key loops in React
+					))}
 				</select>
 			</div>
 		</div>
@@ -55,3 +53,6 @@ function InputBox({
 }
 
 export default InputBox;
+
+//! Remember the keys loops in React whenever you want to run a loop in jsx that time
+//! always use a key

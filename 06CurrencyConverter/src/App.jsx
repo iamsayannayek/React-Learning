@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { InputBox } from "./components";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
-import "./App.css";
 
 function App() {
 	const [amount, setAmount] = useState(0);
@@ -13,6 +12,7 @@ function App() {
 
 	const options = Object.keys(currencyInfo);
 
+	//& Swap The From -> To OR To -> From
 	const swap = () => {
 		setFrom(to);
 		setTo(from);
@@ -20,15 +20,18 @@ function App() {
 		setAmount(convertedAmount);
 	};
 
+	//! Result Display
 	const convert = () => {
 		setConvertedAmount(amount * currencyInfo[to]);
 	};
 
+	const BackgroundImage =
+		"https://i.pinimg.com/originals/b1/a7/78/b1a778b8e9704e10bdec549ce8494143.jpg";
 	return (
 		<div
 			className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
 			style={{
-				backgroundImage: `url('https://images.pexels.com/photos/3532540/pexels-photo-3532540.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
+				backgroundImage: `url('${BackgroundImage}')`,
 			}}
 		>
 			<div className="w-full">
